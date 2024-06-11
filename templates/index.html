@@ -1,0 +1,25 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood-Based Playlist Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="description">
+            <h2>MOODMATRIX: Generate a playlist based on your mood!</h2>
+            <p>Enter your mood(eg. Happy, Sad, Calm, etc.) in the box below and click "Generate Playlist" to get started.</p>
+        </div>
+        <div class="input-container">
+            <form action="/generate" method="get">
+                <input type="text" name="prompt" placeholder="How are you feeling today?" required>
+                <br>
+                <input type="submit" value="Generate Playlist" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

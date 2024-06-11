@@ -1,0 +1,58 @@
+/* static/style.css */
+body {
+    /* Spotify green gradient */
+    background: linear-gradient(45deg, #1DB954, #1ED760);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.description {
+    background-color: rgba(255, 255, 255, 0.9); /* White background with transparency */
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #fff; /* White text */
+    text-align: center;
+}
+
+.input-container {
+    background-color: rgba(255, 255, 255, 0.9); /* White background with transparency */
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center; /* Center text */
+}
+
+.input-container input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    margin-bottom: 20px;
+}
+
+.input-container input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #1ED760;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.input-container input[type="submit"]:hover {
+    background-color: #1DB954;
+}

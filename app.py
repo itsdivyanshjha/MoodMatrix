@@ -1,4 +1,3 @@
-# app.py
 from flask import Flask, request, redirect, url_for, session, render_template
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
@@ -39,7 +38,7 @@ def generate():
 
         user = sp.current_user()
         print(f"User: {user}")
-        playlist_url = create_playlist(sp, user['id'], "Mood-Based Playlist", "Generated based on your mood", track_ids)
+        playlist_url = create_playlist(sp, user['id'], "Mood-Based Playlist", "Generated based on your mood", track_ids, mood)
         if not playlist_url:
             return f"<h1>Failed to create playlist</h1>"
 

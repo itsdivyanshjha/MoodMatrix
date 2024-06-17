@@ -1,24 +1,35 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mood-Based Playlist Generator</title>
+    <title>MoodMatrix: Mood-Based Playlist Generator</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="description">
-            <h2>MOODMATRIX: Generate a playlist based on your mood!</h2>
-            <p>Enter your mood(eg. Happy, Sad, Calm, etc.) in the box below and click "Generate Playlist" to get started.</p>
-        </div>
-        <div class="input-container">
-            <form action="/generate" method="get">
-                <input type="text" name="prompt" placeholder="How are you feeling today?" required>
-                <br>
-                <input type="submit" value="Generate Playlist" class="btn btn-primary">
+    <header class="text-center p-4">
+        <h1>MOODMATRIX - Mood Based Playlist Generator</h1>
+    </header>
+    <div class="container d-flex flex-column align-items-center justify-content-center vh-100">
+        <div class="input-container mb-4">
+            <form action="/generate" method="get" class="spotify-player p-4 rounded shadow">
+                <div class="description text-center mb-4">
+                    <h2>Generate a playlist based on your mood!</h2>
+                    <p>MoodMatrix helps you create the perfect playlist for any mood. Simply enter your current mood, and we'll generate a Spotify playlist just for you!</p>
+                    <p>Try prompts like "Happy", "Sad", "Energetic", "Relaxed", "Angry", "Romantic", "Nostalgic", and more!</p>
+                </div>
+                <input type="text" name="prompt" class="form-control mb-3" placeholder="How are you feeling today?" required>
+                <input type="submit" value="Generate Playlist" class="btn btn-primary btn-block">
             </form>
+        </div>
+        <div class="links text-center">
+            <p>Follow for more 👨🏻‍💻:</p>
+            <a href="https://open.spotify.com/user/b0h8fzxswu2jel5erx4qvlkdm" class="btn btn-link">Spotify</a>
+            <a href="https://www.linkedin.com/in/itsdivyanshjha/" class="btn btn-link">LinkedIn</a>
+            <a href="mailto:jhadivyansh29@gmail.com" class="btn btn-link">Email</a>
+            <a href="https://github.com/itsdivyanshjha" class="btn btn-link">GitHub</a>
         </div>
     </div>
 </body>

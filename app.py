@@ -12,7 +12,7 @@ SPOTIPY_CLIENT_SECRET = "a334cb8e641a4958997c2e12761eb5a2"
 SPOTIPY_REDIRECT_URI = "http://localhost:8085/callback"  # Update this to your Redirect URI
 
 # Scope for modifying public playlists
-scope = "playlist-modify-public"
+scope = "playlist-modify-public user-top-read user-library-read"
 
 # Spotify API client
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=SPOTIPY_CLIENT_ID,
@@ -31,13 +31,12 @@ def generate():
         print(f"Received prompt: {prompt}")
         mood = get_mood_from_prompt(prompt)
         print(f"Determined mood: {mood}")
-        track_ids = generate_playlist(sp, mood)
+        user = sp.current_user()
+        track_ids = generate_playlist(sp, mood, user['id'])
         print(f"Generated track IDs: {track_ids}")
         if not track_ids:
             return f"<h1>No tracks found for mood: {mood}</h1>"
 
-        user = sp.current_user()
-        print(f"User: {user}")
         playlist_url = create_playlist(sp, user['id'], "Mood-Based Playlist", "Generated based on your mood", track_ids, mood)
         if not playlist_url:
             return f"<h1>Failed to create playlist</h1>"

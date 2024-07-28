@@ -4,14 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Playlist</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container d-flex flex-column align-items-center justify-content-center vh-100 text-center">
-        <h1>Your playlist is ready</h1>
-        <a href="{{ playlist_url }}" class="btn btn-success mt-3">Open your playlist on Spotify</a>
-    </div>
+    <header>
+        <h1 class="main-heading">MOODMATRIX</h1>
+    </header>
+    <main class="container result-container">
+        <div class="content">
+            <h2>Your playlist is ready!</h2>
+            <p>We've created a playlist just for you based on your mood. Click the button below to open it on Spotify and enjoy your personalized music experience.</p>
+            <a href="{{ playlist_url }}" class="btn btn-success">Open your playlist on Spotify</a>
+        </div>
+        <div class="links">
+            <p>Follow for more 👨🏻‍💻:</p>
+            <a href="https://open.spotify.com/user/b0h8fzxswu2jel5erx4qvlkdm" class="btn"><i class="fab fa-spotify"></i></a>
+            <a href="https://www.linkedin.com/in/itsdivyanshjha/" class="btn"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:jhadivyansh29@gmail.com" class="btn"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/itsdivyanshjha" class="btn"><i class="fab fa-github"></i></a>
+        </div>
+    </main>
 </body>
 </html>
